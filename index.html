@@ -40,8 +40,8 @@
     .nav{display:flex; gap:8px; flex-wrap:wrap}
     .btn{background:linear-gradient(135deg, rgba(96,165,250,.15), rgba(34,211,238,.15)); border:1px solid var(--border); padding:10px 14px; border-radius:999px; color:var(--text)}
     .btn:hover{border-color:#2b3b65}
-    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
-    .hero-card{background:linear-gradient(180deg, rgba(17,22,36,.8), rgba(17,22,36,.6)); border:1px solid var(--border); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .hero{display:block}
+    .hero-card{background:linear-gradient(180deg, rgba(17,22,36,.8), rgba(17,22,36,.6)); border:1px solid var(--border); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); margin-bottom:20px}
     .hero h1{font-size:2rem; margin:.2rem 0 0}
     .hero p{color:var(--muted); margin:.6rem 0 0}
     .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
@@ -54,7 +54,7 @@
     .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:16px}
     .col-6{grid-column: span 6}
     .col-12{grid-column: span 12}
-    @media (max-width: 860px){.hero{grid-template-columns: 1fr}.col-6{grid-column: span 12}}
+    @media (max-width: 860px){.col-6{grid-column: span 12}}
     .project h3{margin:.2rem 0 0; font-size:1.1rem}
     .project p{margin:.35rem 0 0; color:var(--muted)}
     .project .meta{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
@@ -102,16 +102,6 @@
           <span class="tag">Express</span>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="section-title" style="margin-top:0">
-          <span class="dot"></span><h2 style="margin:0">Quick Contact</h2>
-        </div>
-        <p>
-          <strong>Email:</strong> <a href="mailto:pablorubiaarias@gmail.com">pablorubiaarias@gmail.com</a><br>
-          <strong>GitHub:</strong> <a href="https://github.com/pablo-rub" target="_blank" rel="noopener">@pablo-rub</a><br>
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pablo-rubia-arias-b25576291" target="_blank" rel="noopener">/in/pablo-rubia-arias</a>
-        </p>
-      </div>
     </section>
 
     <section id="projects">
@@ -129,18 +119,6 @@
           <div class="links">
             <a class="link-btn" href="https://github.com/pablo-rub/pokemon-statistics" target="_blank" rel="noopener">📦 Code</a>
             <a class="link-btn" href="#">🟢 Live Demo</a>
-          </div>
-        </article>
-        <article class="section-card project col-6">
-          <h3>Upcoming Project</h3>
-          <p>Reserved space. When ready, duplicate this card and update title, summary, chips and links.</p>
-          <div class="meta">
-            <span class="chip">Tech</span>
-            <span class="chip">Other</span>
-          </div>
-          <div class="links">
-            <span class="link-btn" aria-disabled="true">📦 Code</span>
-            <span class="link-btn" aria-disabled="true">🟢 Demo</span>
           </div>
         </article>
       </div>
@@ -193,7 +171,11 @@
     <section id="contact">
       <div class="section-title"><span class="dot"></span><h2>Contact</h2></div>
       <div class="section-card">
-        <p>Want to get in touch? Reach me at <a href="mailto:pablorubiaarias@gmail.com">pablorubiaarias@gmail.com</a> or via <a href="https://www.linkedin.com/in/pablo-rubia-arias-b25576291" target="_blank" rel="noopener">LinkedIn</a>.</p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:pablorubiaarias@gmail.com">pablorubiaarias@gmail.com</a><br>
+          <strong>GitHub:</strong> <a href="https://github.com/pablo-rub" target="_blank" rel="noopener">@pablo-rub</a><br>
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pablo-rubia-arias-b25576291" target="_blank" rel="noopener">/in/pablo-rubia-arias</a>
+        </p>
       </div>
     </section>
 
