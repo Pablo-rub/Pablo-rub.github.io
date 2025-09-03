@@ -42,7 +42,7 @@
     .hero{display:block}
     .hero-card{background:linear-gradient(180deg, rgba(17,22,36,.8), rgba(17,22,36,.6)); border:1px solid var(--border); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); margin-bottom:20px}
     .hero h1{font-size:2rem; margin:.2rem 0 0}
-    .hero p{color:var(--muted); margin:.6rem 0 0}
+    .hero p{color:var(--muted); margin:.6rem 0 0; font-size:1.05rem}
     section{margin-top:42px}
     .section-title{display:flex; align-items:center; gap:10px; margin:0 0 16px}
     .section-title h2{margin:0; font-size:1.25rem}
@@ -56,6 +56,8 @@
     .project img{margin:16px 0; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border)}
     .links{display:flex; gap:8px; margin-top:12px}
     .link-btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 12px; border-radius:10px; background:rgba(255,255,255,.03)}
+    .chip{border:1px solid var(--border); padding:6px 10px; border-radius:10px; font-size:.85rem; color:#cbd5e1; background:rgba(255,255,255,.02)}
+    .meta{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
     .timeline .t-item{margin:16px 0 0; padding-left:0}
     .t-head{display:flex; justify-content:space-between; gap:12px}
     .t-role{font-weight:700}
@@ -95,6 +97,12 @@
         <article class="section-card project col-12">
           <h3>Trainer Academy</h3>
           <p>Cloud-based web application that collects and analyzes Pokémon VGC matches to obtain probabilities and statistics, with the goal of assisting and guiding new players and reducing the learning curve.</p>
+          <div class="meta">
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Google Cloud</span>
+            <span class="chip">BigQuery</span>
+          </div>
           <img src="assets/traineracademy.png" alt="Trainer Academy preview" />
           <div class="links">
             <a class="link-btn" href="https://traineracademy.xyz" target="_blank" rel="noopener">🌐 Visit traineracademy.xyz</a>
@@ -117,17 +125,17 @@
           </div>
           <div class="t-item">
             <div class="t-head">
-              <div class="t-role">Technological Baccalaureate</div>
-              <div class="t-when">2019 – 2021</div>
-            </div>
-            <div class="t-desc">Colegio El Limonar, Málaga.</div>
-          </div>
-          <div class="t-item">
-            <div class="t-head">
               <div class="t-role">Course: Quantum Computing</div>
               <div class="t-when">2022</div>
             </div>
             <div class="t-desc">Universidad de Málaga. Extension course introducing software development for quantum computing.</div>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              <div class="t-role">Technological Baccalaureate</div>
+              <div class="t-when">2019 – 2021</div>
+            </div>
+            <div class="t-desc">Colegio El Limonar, Málaga.</div>
           </div>
         </div>
       </div>
@@ -139,17 +147,10 @@
         <div class="timeline">
           <div class="t-item">
             <div class="t-head">
-              <div class="t-role">Junior Software Engineer · NTT DATA Europe & Latam</div>
-              <div class="t-when">Jun 2025 – Present</div>
+              <div class="t-role">Software Engineer · NTT DATA Europe & Latam</div>
+              <div class="t-when">Mar 2025 – Present</div>
             </div>
-            <div class="t-desc">Full-time position in Málaga. Working with Oracle SQL Developer, Jira and multiple tools. Contributing to software development projects in hybrid work mode.</div>
-          </div>
-          <div class="t-item">
-            <div class="t-head">
-              <div class="t-role">Software Engineer Intern · NTT DATA Europe & Latam</div>
-              <div class="t-when">Mar 2025 – May 2025</div>
-            </div>
-            <div class="t-desc">Internship in Málaga. Worked with Oracle SQL Developer, Vue.js and additional technologies, gaining hands-on experience in enterprise software projects.</div>
+            <div class="t-desc">Putting into practice and consolidating everything learned during my university studies, while strengthening skills in technologies such as Vue.js, C#, PL/SQL, .NET, Azure DevOps, CI/CD pipelines, Agile methodologies, Oracle SQL Developer, and Jira.</div>
           </div>
         </div>
       </div>
