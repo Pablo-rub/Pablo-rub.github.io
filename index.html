@@ -57,8 +57,7 @@
     @media (max-width: 860px){.col-6{grid-column: span 12}}
     .project h3{margin:.2rem 0 0; font-size:1.1rem}
     .project p{margin:.35rem 0 0; color:var(--muted)}
-    .project .meta{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
-    .chip{border:1px solid var(--border); padding:6px 10px; border-radius:10px; font-size:.85rem; color:#cbd5e1; background:rgba(255,255,255,.02)}
+    .project img{margin:16px 0; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border)}
     .links{display:flex; gap:8px; margin-top:12px}
     .link-btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 12px; border-radius:10px; background:rgba(255,255,255,.03)}
     .timeline{position:relative; padding-left:22px}
@@ -108,17 +107,26 @@
       <div class="section-title"><span class="dot"></span><h2>Projects</h2></div>
       <div class="grid">
         <article class="section-card project col-6">
-          <h3>Pokémon Statistics · Replay Analytics (VGC)</h3>
-          <p>Node.js + MongoDB tool that ingests Pokémon Showdown replays, extracts players, winner, turns and tracks Pokémon, moves, items and statuses turn by turn for analytics and visualization.</p>
-          <div class="meta">
-            <span class="chip">Node.js</span>
-            <span class="chip">Express</span>
-            <span class="chip">MongoDB</span>
-            <span class="chip">Mongoose</span>
-          </div>
+          <h3>Trainer Academy</h3>
+          <p>Trainer Academy — a small web app that analyzes Pokémon Showdown / Smogon data to surface move usage, win rates, and common teammate combos. Still early and under active development.</p>
+          <p>This started as my final‑year university project, but ready for the community to try — I’ll keep developing it as long as users find it useful!</p>
+          <p><strong>What it does</strong></p>
+          <ul>
+            <li>Shows move & combo win rates, common teammates, and basic team insights.</li>
+            <li>Parses public replays to highlight trends.</li>
+          </ul>
+          <p><strong>A few notes</strong></p>
+          <ul>
+            <li>Some sections (for example the forum) are intentionally basic for now and are pending improvements.</li>
+            <li>It’s normal to find bugs or rough edges — please report them so I can fix and improve things. The project stays in development while it’s useful to the community.</li>
+            <li>For any questions, suggestions, or feedback, email <a href="mailto:support@traineracademy.xyz">support@traineracademy.xyz</a>.</li>
+          </ul>
+          <p>Thanks for checking it out — I’m excited to hear what you think!</p>
+          <p><em>This is a fan project — not affiliated with Nintendo/Game Freak/The Pokémon Company.</em></p>
+          <img src="034a8880-9761-44dc-bd12-fcf1d7332e70.png" alt="Trainer Academy preview" />
           <div class="links">
-            <a class="link-btn" href="https://github.com/pablo-rub/pokemon-statistics" target="_blank" rel="noopener">📦 Code</a>
-            <a class="link-btn" href="#">🟢 Live Demo</a>
+            <a class="link-btn" href="https://traineracademy.xyz" target="_blank" rel="noopener">🌐 Visit traineracademy.xyz</a>
+            <a class="link-btn" href="https://x.com/_traineracademy" target="_blank" rel="noopener">🐦 Follow on X</a>
           </div>
         </article>
       </div>
@@ -134,13 +142,6 @@
               <div class="t-when">Sep 2021 – Jul 2025</div>
             </div>
             <div class="t-desc">Universidad de Málaga. Focused on software design, databases, and full-stack development. Final Degree Project: Trainer Academy web application.</div>
-          </div>
-          <div class="t-item">
-            <div class="t-head">
-              <div class="t-role">Courses & Certifications</div>
-              <div class="t-when">Optional</div>
-            </div>
-            <div class="t-desc">Examples: Advanced JavaScript, Databases, Cloud Computing.</div>
           </div>
         </div>
       </div>
