@@ -3,66 +3,79 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pablo Rubia Arias · Portfolio</title>
-  <meta name="description" content="Portfolio of Pablo Rubia Arias: projects, education and experience." />
-  <link rel="icon" href="/favicon.ico" />
+  <title>Pablo Rubia Arias · Software Engineer · DevOps &amp; Automation</title>
+  <meta name="description" content="Portfolio of Pablo Rubia Arias, Software Engineer focused on DevOps and automation: production projects on Linux/VPS, Google Cloud and Supabase." />
+  <link rel="canonical" href="https://pablo-rub.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e14'/%3E%3Ctext x='32' y='42' font-size='30' font-family='Arial' font-weight='700' fill='%2360a5fa' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pablo Rubia Arias" />
+  <meta property="og:title" content="Pablo Rubia Arias · Software Engineer · DevOps &amp; Automation" />
+  <meta property="og:description" content="Production projects on Linux/VPS, Google Cloud and Supabase. Automation, CI/CD and reliable systems." />
+  <meta property="og:url" content="https://pablo-rub.github.io/" />
+  <meta property="og:image" content="https://pablo-rub.github.io/assets/pokeradartcg.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
     :root{
-      --bg:#0b0e14;
-      --panel:#111624;
-      --muted:#9aa4b2;
-      --text:#e6edf3;
-      --brand:#60a5fa;
-      --brand-2:#22d3ee;
-      --border:#1f2a44;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
+      --bg:#0b0e14; --panel:#111624; --muted:#9aa4b2; --text:#e6edf3;
+      --brand:#60a5fa; --brand-2:#22d3ee; --border:#1f2a44;
+      --shadow:0 10px 30px rgba(0,0,0,.35); --radius:16px;
     }
     *{box-sizing:border-box}
-    html, body{height:100%}
+    html{scroll-behavior:smooth}
     body{
       margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.10), transparent 60%),
-                 radial-gradient(1200px 600px at 110% -20%, rgba(96,165,250,.10), transparent 60%),
-                 var(--bg);
-      color:var(--text);
-      line-height:1.6;
+                  radial-gradient(1200px 600px at 110% -20%, rgba(96,165,250,.10), transparent 60%),
+                  var(--bg);
+      color:var(--text); line-height:1.6;
     }
     a{color:var(--brand); text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1100px; margin:0 auto; padding:28px 20px 80px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0 28px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0 28px; flex-wrap:wrap}
     .logo{display:flex; align-items:center; gap:12px}
-    .avatar{width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; color:#00111a; font-weight:800; box-shadow:var(--shadow)}
+    .avatar{width:56px; height:56px; border-radius:50%; object-fit:cover; box-shadow:var(--shadow)}
     .name{font-size:1.25rem; font-weight:700}
     .subtitle{color:var(--muted); font-size:.95rem}
     .nav{display:flex; gap:8px; flex-wrap:wrap}
     .btn{background:linear-gradient(135deg, rgba(96,165,250,.15), rgba(34,211,238,.15)); border:1px solid var(--border); padding:10px 14px; border-radius:999px; color:var(--text)}
-    .btn:hover{border-color:#2b3b65}
-    .hero{display:block}
-    .hero-card{background:linear-gradient(180deg, rgba(17,22,36,.8), rgba(17,22,36,.6)); border:1px solid var(--border); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); margin-bottom:20px}
-    .hero h1{font-size:2rem; margin:.2rem 0 0}
-    .hero p{color:var(--muted); margin:.6rem 0 0; font-size:1.05rem}
+    .btn:hover{border-color:#2b3b65; text-decoration:none}
+    .hero-card,.section-card{background:linear-gradient(180deg, rgba(17,22,36,.8), rgba(17,22,36,.6)); border:1px solid var(--border); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .hero h1{font-size:2rem; margin:.2rem 0 0; line-height:1.2}
+    .hero p{color:var(--muted); margin:.8rem 0 0; font-size:1.05rem}
+    .hero .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
     section{margin-top:42px}
     .section-title{display:flex; align-items:center; gap:10px; margin:0 0 16px}
     .section-title h2{margin:0; font-size:1.25rem}
     .section-title .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2))}
-    .section-card{background:linear-gradient(180deg, rgba(17,22,36,.8), rgba(17,22,36,.6)); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
-    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:16px}
-    .col-12{grid-column: span 12}
-    @media (max-width: 860px){.col-12{grid-column: span 12}}
-    .project h3{margin:.2rem 0 0; font-size:1.1rem}
+    .projects{display:grid; gap:20px}
+    .project{display:grid; grid-template-columns: 340px 1fr; gap:22px; align-items:start}
+    @media (max-width: 860px){.project{grid-template-columns:1fr}}
+    .project img.shot{width:100%; height:auto; border-radius:10px; border:1px solid var(--border); display:block}
+    .project h3{margin:0; font-size:1.2rem}
+    .project .tag{color:var(--brand-2); font-size:.85rem; margin:.15rem 0 .5rem}
     .project p{margin:.35rem 0 0; color:var(--muted)}
-    .project img{margin:16px 0; max-width:100%; height:auto; border-radius:8px; border:1px solid var(--border)}
-    .links{display:flex; gap:8px; margin-top:12px}
+    .project ul{margin:.6rem 0 0; padding-left:1.1rem; color:var(--muted)}
+    .project li{margin:.2rem 0}
+    .chips{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
+    .chip{border:1px solid var(--border); padding:4px 10px; border-radius:10px; font-size:.82rem; color:#cbd5e1; background:rgba(255,255,255,.02)}
+    .links{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap}
     .link-btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:8px 12px; border-radius:10px; background:rgba(255,255,255,.03)}
-    .chip{border:1px solid var(--border); padding:6px 10px; border-radius:10px; font-size:.85rem; color:#cbd5e1; background:rgba(255,255,255,.02)}
-    .meta{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
-    .timeline .t-item{margin:16px 0 0; padding-left:0}
-    .t-head{display:flex; justify-content:space-between; gap:12px}
+    .link-btn:hover{text-decoration:none; border-color:#2b3b65}
+    .arch{margin-top:16px; padding-top:14px; border-top:1px dashed var(--border)}
+    .arch h4{margin:0 0 10px; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600}
+    .flow{display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; margin:6px 0}
+    .node{border:1px solid var(--border); background:rgba(96,165,250,.08); padding:5px 10px; border-radius:8px; font-size:.8rem; color:var(--text)}
+    .node.alt{background:rgba(34,211,238,.08)}
+    .arrow{color:var(--muted); font-size:.9rem}
+    .flow-label{font-size:.75rem; color:var(--muted); width:100%; margin-top:6px}
+    .timeline .t-item{margin:16px 0 0}
+    .timeline .t-item:first-child{margin-top:0}
+    .t-head{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
     .t-role{font-weight:700}
     .t-when{color:#c0cada}
     .t-desc{color:var(--muted); margin:.25rem 0 0}
+    .skills{display:flex; gap:8px; flex-wrap:wrap}
     footer{margin-top:48px; padding-top:16px; color:var(--muted); font-size:.95rem}
   </style>
 </head>
@@ -70,74 +83,147 @@
   <div class="container">
     <header>
       <div class="logo">
-        <img src="assets/photo.jpg" alt="Pablo Rubia Arias" class="avatar" style="width:56px; height:56px; border-radius:50%; object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,.35);" />
+        <img src="assets/photo.jpg" alt="Pablo Rubia Arias" class="avatar" />
         <div>
           <div class="name">Pablo Rubia Arias</div>
-          <div class="subtitle">Software Engineer</div>
+          <div class="subtitle">Software Engineer · DevOps &amp; Automation</div>
         </div>
       </div>
       <nav class="nav">
         <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#education">Education</a>
         <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#education">Education</a>
         <a class="btn" href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" style="margin-top:0">
       <div class="hero-card">
-        <h1>Hello, I'm Pablo 👋</h1>
-        <p>I am a Software Engineer with a strong foundation in web application development, Agile methodologies, and DevOps practices including CI/CD. This foundation was acquired throughout my university studies and recently strengthened during my experience at NTT DATA as a full stack developer. During this time, I have worked with modern technologies, as well as relational and non-relational databases, developing complete functionalities on both the frontend and backend.</p>
+        <h1>I build and run software that works on its own.</h1>
+        <p>Software Engineer with a Master's in DevOps, focused on automation, CI/CD, cloud and reliable systems. Alongside my work at NTT DATA, I develop and operate my own products in production, from the Linux server and backups to the Google Cloud pipelines. Málaga, Spain.</p>
+        <div class="cta">
+          <a class="btn" href="https://www.linkedin.com/in/pablo-rubia-arias-b25576291" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:pabloruar03@gmail.com">Email me</a>
+        </div>
       </div>
     </section>
 
     <section id="projects">
-      <div class="section-title"><span class="dot"></span><h2>Projects</h2></div>
-      <div class="grid">
-        <article class="section-card project col-12">
-          <h3>Trainer Academy</h3>
-          <p>Cloud-based web application that collects and analyzes Pokémon VGC matches to obtain probabilities and statistics, with the goal of assisting and guiding new players and reducing the learning curve.</p>
-          <div class="meta">
-            <span class="chip">React</span>
-            <span class="chip">Node.js</span>
-            <span class="chip">Google Cloud</span>
-            <span class="chip">BigQuery</span>
-          </div>
-          <img src="assets/traineracademy.png" alt="Trainer Academy preview" />
-          <div class="links">
-            <a class="link-btn" href="https://traineracademy.xyz" target="_blank" rel="noopener">🌐 Visit traineracademy.xyz</a>
-            <a class="link-btn" href="https://x.com/_traineracademy" target="_blank" rel="noopener">🐦 Follow on X</a>
+      <div class="section-title"><span class="dot"></span><h2>Projects in production</h2></div>
+      <div class="projects">
+
+        <article class="section-card project">
+          <img class="shot" src="assets/pokeradartcg.png" alt="PokeradarTCG" />
+          <div>
+            <h3>PokeradarTCG</h3>
+            <div class="tag">Pokémon TCG price comparison · Solo-built · May 2026 – present</div>
+            <p>Compares prices of Pokémon TCG products across Spanish online stores, running 24/7 on my own Linux server.</p>
+            <ul>
+              <li>Python/Flask backend with <strong>97 scrapers</strong> feeding a SQLite database (WAL mode).</li>
+              <li>Linux VPS (Hetzner) with nginx, systemd and cron; TLS and health checks with email alerts.</li>
+              <li>Daily, weekly and monthly backups with <strong>verified restores</strong>.</li>
+              <li>Push/email notifications, Umami analytics and automated social posting.</li>
+              <li>pytest + Playwright test suite, ≥80% coverage per file.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Linux</span><span class="chip">nginx</span><span class="chip">systemd</span><span class="chip">SQLite</span><span class="chip">Playwright</span>
+            </div>
+            <div class="arch">
+              <h4>How it runs</h4>
+              <div class="flow">
+                <span class="node">cron</span><span class="arrow">→</span>
+                <span class="node">97 scrapers</span><span class="arrow">→</span>
+                <span class="node">SQLite (WAL)</span><span class="arrow">→</span>
+                <span class="node">Flask + gunicorn</span><span class="arrow">→</span>
+                <span class="node">nginx (TLS)</span><span class="arrow">→</span>
+                <span class="node alt">users</span>
+              </div>
+              <div class="flow">
+                <span class="node">cron 03:00</span><span class="arrow">→</span>
+                <span class="node">backup (daily / weekly / monthly)</span><span class="arrow">→</span>
+                <span class="node">rsync to Hetzner Storage Box</span><span class="arrow">→</span>
+                <span class="node alt">restore check</span>
+              </div>
+              <div class="flow">
+                <span class="node">health check after every scrape run</span><span class="arrow">→</span>
+                <span class="node alt">email alert</span>
+              </div>
+            </div>
+            <div class="links"><a class="link-btn" href="https://pokeradartcg.com" target="_blank" rel="noopener">🌐 pokeradartcg.com</a></div>
           </div>
         </article>
-      </div>
-    </section>
 
-    <section id="education">
-      <div class="section-title"><span class="dot"></span><h2>Education</h2></div>
-      <div class="section-card">
-        <div class="timeline">
-          <div class="t-item">
-            <div class="t-head">
-              <div class="t-role">Bachelor’s Degree in Software Engineering</div>
-              <div class="t-when">Sep 2021 – Jul 2025</div>
+        <article class="section-card project">
+          <img class="shot" src="assets/traineracademy.png" alt="Trainer Academy preview" />
+          <div>
+            <h3>Trainer Academy</h3>
+            <div class="tag">Pokémon VGC analytics · Final degree project, kept in production · Oct 2024 – present</div>
+            <p>Collects and analyzes competitive Pokémon matches to produce statistics, a damage calculator and an AI turn assistant.</p>
+            <ul>
+              <li>React + Node/Express app, containerized with multi-stage Docker builds.</li>
+              <li>Two Cloud Run services with Cloud Build CI/CD from the main branch.</li>
+              <li>BigQuery for match data; Redis and Cloud Storage caching; Firebase authentication.</li>
+              <li>Python/FastAPI ML service (XGBoost, 229 features) behind the turn assistant, plus a Showdown browser extension.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Docker</span><span class="chip">Google Cloud Run</span><span class="chip">Cloud Build</span><span class="chip">BigQuery</span><span class="chip">FastAPI</span>
             </div>
-            <div class="t-desc">Universidad de Málaga. Focused on software design, databases, and full-stack development. Final Degree Project: Trainer Academy web application.</div>
-          </div>
-          <div class="t-item">
-            <div class="t-head">
-              <div class="t-role">Course: Quantum Computing</div>
-              <div class="t-when">2022</div>
+            <div class="arch">
+              <h4>How it ships and runs</h4>
+              <div class="flow">
+                <span class="node">git push (main)</span><span class="arrow">→</span>
+                <span class="node">Cloud Build</span><span class="arrow">→</span>
+                <span class="node">Docker image</span><span class="arrow">→</span>
+                <span class="node alt">Cloud Run</span>
+              </div>
+              <div class="flow">
+                <span class="node">Showdown replays</span><span class="arrow">→</span>
+                <span class="node">Node parser</span><span class="arrow">→</span>
+                <span class="node">BigQuery</span><span class="arrow">→</span>
+                <span class="node">ML service (FastAPI)</span><span class="arrow">→</span>
+                <span class="node alt">turn assistant</span>
+              </div>
             </div>
-            <div class="t-desc">Universidad de Málaga. Extension course introducing software development for quantum computing.</div>
-          </div>
-          <div class="t-item">
-            <div class="t-head">
-              <div class="t-role">Technological Baccalaureate</div>
-              <div class="t-when">2019 – 2021</div>
+            <div class="links">
+              <a class="link-btn" href="https://traineracademy.xyz" target="_blank" rel="noopener">🌐 traineracademy.xyz</a>
+              <a class="link-btn" href="https://x.com/_traineracademy" target="_blank" rel="noopener">🐦 Follow on X</a>
             </div>
-            <div class="t-desc">Colegio El Limonar, Málaga.</div>
           </div>
-        </div>
+        </article>
+
+        <article class="section-card project">
+          <img class="shot" src="assets/vaultwatch.jpg" alt="VaultWatch" />
+          <div>
+            <h3>VaultWatch</h3>
+            <div class="tag">Movie &amp; TV tracker · Android · Published on Google Play, Oct 2026</div>
+            <p>Mobile app to log movies and shows: history, ratings, lists and statistics. Available in 7 languages.</p>
+            <ul>
+              <li>React Native + Expo (EAS builds), TypeScript, Expo Router and Zustand.</li>
+              <li>Supabase backend: Postgres with SQL migrations and security-definer functions, Edge Functions, Google OAuth.</li>
+              <li>Freemium model with RevenueCat subscriptions and AdMob.</li>
+              <li>Backup service (Node + Docker) and a public web page on Vercel.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">React Native</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">RevenueCat</span><span class="chip">Docker</span>
+            </div>
+            <div class="arch">
+              <h4>Architecture</h4>
+              <div class="flow">
+                <span class="node">Expo app</span><span class="arrow">→</span>
+                <span class="node">Supabase (Postgres + Auth)</span><span class="arrow">←</span>
+                <span class="node">Edge Function</span><span class="arrow">←</span>
+                <span class="node alt">RevenueCat webhook</span>
+              </div>
+              <div class="flow">
+                <span class="node">EAS Build</span><span class="arrow">→</span>
+                <span class="node">.aab bundle</span><span class="arrow">→</span>
+                <span class="node alt">Google Play</span>
+              </div>
+            </div>
+            <div class="links"><a class="link-btn" href="https://play.google.com/store/apps/details?id=com.pablorub.vaultwatch" target="_blank" rel="noopener">▶ Google Play</a></div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -147,35 +233,65 @@
         <div class="timeline">
           <div class="t-item">
             <div class="t-head">
-              <div class="t-role">Junior Software Engineer · NTT DATA Europe & Latam</div>
-              <div class="t-when">Mar 2025 – Present</div>
+              <div class="t-role">Junior Software Engineer · NTT DATA Europe &amp; Latam</div>
+              <div class="t-when">Jun 2025 – Present</div>
             </div>
-            <div class="t-desc">Putting into practice and consolidating everything learned during my university studies, while strengthening skills in technologies such as Vue.js, C#, PL/SQL, .NET, Azure DevOps, CI/CD pipelines, Agile methodologies, Oracle SQL Developer, and Jira.</div>
+            <div class="t-desc">Full-stack development with Vue.js and .NET, support of production incidents and work with Azure DevOps, CI/CD pipelines, SonarQube and Oracle SQL. I particularly enjoy finding manual, repetitive processes and automating them.</div>
           </div>
           <div class="t-item">
             <div class="t-head">
-              <div class="t-role">Software Engineer Intern · NTT DATA Europe & Latam</div>
+              <div class="t-role">Software Engineer Intern · NTT DATA Europe &amp; Latam</div>
               <div class="t-when">Mar 2025 – May 2025</div>
             </div>
-            <div class="t-desc">Internship in Málaga. Worked with Oracle SQL Developer, Vue.js and other technologies, gaining hands-on experience in enterprise software projects.</div>
+            <div class="t-desc">Internship in Málaga working with Oracle SQL Developer, Vue.js and other technologies in enterprise software projects.</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-title"><span class="dot"></span><h2>Education</h2></div>
+      <div class="section-card">
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-head">
+              <div class="t-role">Master's in DevOps · UNIR</div>
+              <div class="t-when">Sep 2025 – Oct 2026</div>
+            </div>
+            <div class="t-desc">Includes the Postgraduate Program in AI for Software Development and DevOps. Cloud (AWS, Azure), Kubernetes, Terraform, Ansible, CI/CD, observability and SecDevOps.</div>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              <div class="t-role">Bachelor's Degree in Software Engineering</div>
+              <div class="t-when">Sep 2021 – Jul 2025</div>
+            </div>
+            <div class="t-desc">Universidad de Málaga. Final Degree Project: Trainer Academy.</div>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              <div class="t-role">Course: Quantum Computing</div>
+              <div class="t-when">2022</div>
+            </div>
+            <div class="t-desc">Universidad de Málaga. Extension course introducing software development for quantum computing.</div>
+          </div>
+        </div>
+        <p class="t-desc" style="margin-top:16px">Languages: Spanish (native) · English (C1, Cambridge).</p>
       </div>
     </section>
 
     <section id="contact">
       <div class="section-title"><span class="dot"></span><h2>Contact</h2></div>
       <div class="section-card">
-        <p>
-          <strong>Email:</strong> <a href="mailto:pablorubiaarias@gmail.com">pablorubiaarias@gmail.com</a><br>
-          <strong>GitHub:</strong> <a href="https://github.com/pablo-rub" target="_blank" rel="noopener">@pablo-rub</a><br>
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pablo-rubia-arias-b25576291" target="_blank" rel="noopener">/in/pablo-rubia-arias</a>
+        <p style="margin:0">
+          <strong>Email:</strong> <a href="mailto:pabloruar03@gmail.com">pabloruar03@gmail.com</a><br>
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pablo-rubia-arias-b25576291" target="_blank" rel="noopener">/in/pablo-rubia-arias</a><br>
+          <strong>GitHub:</strong> <a href="https://github.com/pablo-rub" target="_blank" rel="noopener">@pablo-rub</a>
         </p>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Pablo Rubia Arias · Built with HTML/CSS · Deployed on GitHub Pages
+      © <span id="y"></span> Pablo Rubia Arias · Built with plain HTML/CSS · Deployed on GitHub Pages
     </footer>
   </div>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
