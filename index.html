@@ -77,9 +77,43 @@
     .t-desc{color:var(--muted); margin:.25rem 0 0}
     .skills{display:flex; gap:8px; flex-wrap:wrap}
     footer{margin-top:48px; padding-top:16px; color:var(--muted); font-size:.95rem}
+    .tl{margin-top:4px}
+    .tl-axis,.tl-row{display:grid; grid-template-columns:190px 1fr; gap:14px; align-items:center}
+    .tl-axis{margin-bottom:6px}
+    .tl-ticks,.tl-track{display:grid; grid-template-columns:repeat(26,1fr)}
+    .tl-ticks span{grid-column:span 3; font-size:.72rem; color:var(--muted); border-left:1px solid var(--border); padding-left:6px; white-space:nowrap}
+    .tl-ticks span:last-child{grid-column:span 2}
+    .tl-row{margin:7px 0}
+    .tl-label{font-size:.9rem; font-weight:600; line-height:1.2}
+    .tl-label small{display:block; color:var(--muted); font-weight:400; font-size:.75rem}
+    .tl-track{height:28px; align-items:stretch; background:repeating-linear-gradient(90deg, transparent 0, transparent calc(100%/26*3 - 1px), rgba(31,42,68,.7) calc(100%/26*3 - 1px), rgba(31,42,68,.7) calc(100%/26*3))}
+    .tl-bar{grid-row:1; border-radius:8px; font-size:.72rem; color:#00111a; font-weight:600; display:flex; align-items:center; padding:0 10px; white-space:nowrap; overflow:hidden}
+    .tl-bar.proj{background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+    .tl-bar.work{background:#34d399}
+    .tl-bar.work.intern{background:#6ee7b7}
+    .tl-bar.study{background:#a5b4fc}
+    .tl-bar.clip{border-top-left-radius:0; border-bottom-left-radius:0}
+    .tl-bar.open{border-top-right-radius:0; border-bottom-right-radius:0}
+    .tl-legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:.78rem; color:var(--muted)}
+    .tl-legend i{display:inline-block; width:12px; height:12px; border-radius:4px; margin-right:6px; vertical-align:-1px}
+    @media (max-width: 760px){
+      .tl-axis,.tl-row{grid-template-columns:1fr; gap:4px}
+      .tl-axis > div:first-child{display:none}
+      .tl-ticks span{font-size:.6rem; padding-left:3px}
+      .tl-bar{font-size:.62rem; padding:0 6px}
+      .m-hide{display:none}
+    }
+    a.tl-label{color:var(--text)}
+    a.tl-label:hover{text-decoration:none; color:var(--brand)}
+    a.tl-label:hover small{color:var(--brand-2)}
+    section[id], article[id]{scroll-margin-top:16px}
+    .to-top{position:fixed; right:22px; bottom:22px; width:46px; height:46px; border-radius:50%; border:1px solid var(--border); background:linear-gradient(135deg, rgba(96,165,250,.95), rgba(34,211,238,.95)); color:#00111a; font-size:1.3rem; font-weight:700; display:grid; place-items:center; box-shadow:var(--shadow); opacity:0; pointer-events:none; transform:translateY(8px); transition:opacity .2s, transform .2s; text-decoration:none; z-index:10}
+    .to-top.show{opacity:1; pointer-events:auto; transform:none}
+    .to-top:hover{text-decoration:none; filter:brightness(1.1)}
   </style>
 </head>
 <body>
+  <a id="top"></a>
   <div class="container">
     <header>
       <div class="logo">
@@ -108,11 +142,47 @@
       </div>
     </section>
 
+    <section id="timeline">
+      <div class="section-title"><span class="dot"></span><h2>Timeline</h2></div>
+      <div class="section-card tl">
+        <div class="tl-axis"><div></div><div class="tl-ticks"><span>Oct 24</span><span>Jan 25</span><span>Apr 25</span><span>Jul 25</span><span>Oct 25</span><span>Jan 26</span><span>Apr 26</span><span>Jul 26</span><span>Oct 26</span></div></div>
+        <div class="tl-row">
+          <a class="tl-label" href="#traineracademy">Trainer Academy<small>Final degree project</small></a>
+          <div class="tl-track"><div class="tl-bar proj" style="grid-column:1 / 27">Oct 2024 – present</div></div>
+        </div>
+        <div class="tl-row">
+          <a class="tl-label" href="#education">Software Engineering<small>Universidad de Málaga</small></a>
+          <div class="tl-track"><div class="tl-bar study clip" style="grid-column:1 / 11">… Jul 2025</div></div>
+        </div>
+        <div class="tl-row">
+          <a class="tl-label" href="#experience">NTT DATA<small>Intern → Junior Software Engineer</small></a>
+          <div class="tl-track"><div class="tl-bar work intern" style="grid-column:6 / 9">Intern</div><div class="tl-bar work" style="grid-column:9 / 27">Jun 2025 – present</div></div>
+        </div>
+        <div class="tl-row">
+          <a class="tl-label" href="#education">Master's in DevOps<small>UNIR</small></a>
+          <div class="tl-track"><div class="tl-bar study" style="grid-column:12 / 26">Sep 2025 – Oct 2026</div></div>
+        </div>
+        <div class="tl-row">
+          <a class="tl-label" href="#vaultwatch">VaultWatch<small>Published on Google Play</small></a>
+          <div class="tl-track"><div class="tl-bar proj" style="grid-column:19 / 26">Apr – Oct 2026</div></div>
+        </div>
+        <div class="tl-row">
+          <a class="tl-label" href="#pokeradartcg">PokeradarTCG<small>In production</small></a>
+          <div class="tl-track"><div class="tl-bar proj" style="grid-column:20 / 27">May 2026<span class="m-hide">&nbsp;– present</span></div></div>
+        </div>
+        <div class="tl-legend">
+          <span><i style="background:linear-gradient(90deg,#60a5fa,#22d3ee)"></i>Own projects</span>
+          <span><i style="background:#34d399"></i>Work</span>
+          <span><i style="background:#a5b4fc"></i>Studies</span>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
       <div class="section-title"><span class="dot"></span><h2>Projects in production</h2></div>
       <div class="projects">
 
-        <article class="section-card project">
+        <article class="section-card project" id="pokeradartcg">
           <img class="shot" src="assets/pokeradartcg.png" alt="PokeradarTCG" />
           <div>
             <h3>PokeradarTCG</h3>
@@ -156,7 +226,7 @@
           </div>
         </article>
 
-        <article class="section-card project">
+        <article class="section-card project" id="traineracademy">
           <img class="shot" src="assets/traineracademy.png" alt="Trainer Academy preview" />
           <div>
             <h3>Trainer Academy</h3>
@@ -193,7 +263,7 @@
           </div>
         </article>
 
-        <article class="section-card project">
+        <article class="section-card project" id="vaultwatch">
           <img class="shot" src="assets/vaultwatch.jpg" alt="VaultWatch" />
           <div>
             <h3>VaultWatch</h3>
@@ -296,6 +366,14 @@
       © <span id="y"></span> Pablo Rubia Arias · Built with plain HTML/CSS · Deployed on GitHub Pages
     </footer>
   </div>
+  <a class="to-top" href="#top" aria-label="Back to top" title="Back to top">↑</a>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    (function(){
+      var b=document.querySelector('.to-top');
+      function t(){ b.classList.toggle('show', window.scrollY > 300); }
+      window.addEventListener('scroll', t, {passive:true}); t();
+    })();
+  </script>
 </body>
 </html>
